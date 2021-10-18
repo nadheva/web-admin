@@ -1,0 +1,4 @@
+[user]
+	emai = nadheva17@student.uns.ac.id
+	email = nadheva17@student.uns.ac.id
+	name = nadheva17
