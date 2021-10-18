@@ -58,12 +58,12 @@ class KontenVidioController extends Controller
     public function update(Request $request, $id)
     {
         $KontenVidio = KontenVideo::findOrFail($id);
-        $kontenVidio->judul = $request->judul;
-        $kontenVidio->deskripsi = $request->deskripsi;
-        $kontenVidio->link = $request->link;
-        $kontenVidio->bab = $request->bab;
-        $kontenVidio->kelas_id = $request->kelas_id;
-        $kontenVidio->save();
+        $KontenVidio->judul = $request->judul;
+        $KontenVidio->deskripsi = $request->deskripsi;
+        $KontenVidio->link = $request->link;
+        $KontenVidio->bab = $request->bab;
+        $KontenVidio->kelas_id = $request->kelas_id;
+        $KontenVidio->save();
 
         return redirect()->route('kontenVidio.index')
         ->with('edit', 'pengumuman Berhasil Diedit');
