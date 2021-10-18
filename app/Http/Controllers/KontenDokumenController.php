@@ -27,7 +27,7 @@ class KontenDokumenController extends Controller
             'deskripsi' => 'required',
             'file' => 'required',
             'bab' => 'required',
-            'id_kelas' => 'required',
+            'kelas_id' => 'required',
         ]);
 
         $upload = $request->file;
@@ -44,7 +44,7 @@ class KontenDokumenController extends Controller
             'deskripsi' => $request->deskripsi,
             'file' => $file_name,
             'bab' => $request->bab,
-            'id_kelas' => $request->id_kelas,
+            'kelas_id' => $request->kelas_id,
         ]);
         return redirect()->route('kontenDokumen.index')
             ->with('success', 'kontenDokumen Berhasil Ditambahkan');
@@ -74,7 +74,7 @@ class KontenDokumenController extends Controller
         $kontenDokumen->judul = $request->judul;
         $kontenDokumen->deskripsi = $request->deskripsi;  
         $kontenDokumen->bab = $request->bab;
-        $kontenDokumen->id_kelas = $request->id_kelas;
+        $kontenDokumen->kelas_id = $request->kelas_id;
 
         if (isset($request->file)){
             $extention = $request->file->extension();

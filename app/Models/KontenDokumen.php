@@ -14,14 +14,14 @@ class KontenDokumen extends Model
         'deskripsi',
         'file',
         'bab',
-        //'kelas_id'
+        'kelas_id'
     ];
 
     protected $primaryKey = 'id';
 
 
-    // public function kelas()
-    // {
-    //     return $this->belongsTo(kelas::class, 'kelas_id', 'id');
-    // }
+    public function kelas()
+    {
+        return $this->belongsTo(kelas::class, 'kelas_id', 'id');
+    }
 }

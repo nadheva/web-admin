@@ -27,14 +27,14 @@ class KontenVidioController extends Controller
             'deskripsi' => 'required',
             'link' => 'required',
             'bab' => 'required',
-            'id_kelas' => 'required',
+            'kelas_id' => 'required',
         ]);
         KontenVideo::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'link' => $request->link,
             'bab' => $request->bab,
-            'id_kelas' => $request->id_kelas,
+            'kelas_id' => $request->kelas_id,
         ]);
         return redirect()->route('kontenVidio.index')
             ->with('success', 'kontenVidio Berhasil Ditambahkan');
@@ -62,7 +62,7 @@ class KontenVidioController extends Controller
         $kontenVidio->deskripsi = $request->deskripsi;
         $kontenVidio->link = $request->link;
         $kontenVidio->bab = $request->bab;
-        $kontenVidio->id_kelas = $request->id_kelas;
+        $kontenVidio->kelas_id = $request->kelas_id;
         $kontenVidio->save();
 
         return redirect()->route('kontenVidio.index')

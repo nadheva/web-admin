@@ -30,7 +30,7 @@
                     <div class="form-group label-floating">
                         <label class="control-label">Kelas</label>
                         <div class="col-lg-3 col-md-6 col-sm-3">
-                            <select class="selectpicker" data-style="btn btn-info" name="id_kelas" value="{{$kontenDokumen->kelas->nama}}" data-size="7" >
+                            <select class="selectpicker" data-style="btn btn-info" name="kelas_id" value="{{$kontenDokumen->kelas->nama}}" data-size="7" >
                                 @foreach ($kelas as $item)
                                     <option value="{{$item->id}}">{{$item->nama}}</option>
                                 @endforeach                             
