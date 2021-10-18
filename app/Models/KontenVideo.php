@@ -20,9 +20,9 @@ class KontenVideo extends Model
     protected $primaryKey = 'id';
 
 
-//     public function kelas()
-//     {
-//         return $this->belongsTo(kelas::class, 'kelas_id', 'id');
-//     }
-// }
+    public function kelas()
+    {
+        return $this->belongsTo(kelas::class, 'kelas_id', 'id');
+    }
 }
+

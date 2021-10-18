@@ -39,4 +39,8 @@
     <!--     Fonts and icons     -->
     <link href="{{asset('template/')}}/assets/css/font-awesome.css" rel="stylesheet" />
     <link href="{{asset('template/')}}/assets/css/google-roboto-300-700.css" rel="stylesheet" />
+
+    {{-- Datatable  --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.css">
+    @stack('css')
 </head>

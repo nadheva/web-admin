@@ -16,8 +16,8 @@
                     </div>
 
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
+                        <div  class="table-responsive">
+                            <table id="myTable" class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -25,6 +25,7 @@
                                         <th>Deskripsi</th>
                                         <th>Link</th>
                                         <th>Bab</th>
+                                        <th>Kelas</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -36,6 +37,7 @@
                                         <td>{{ $item->deskripsi }}</td>
                                         <td>{{ $item->link }}</td>
                                         <td>{{ $item->bab }}</td>
+                                        <td>{{ $item->kelas->nama }}</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <a href="{{route('kontenVidio.edit', $item->id)}}" class="btn btn-primary"><i class="material-icons">edit</i></a>
@@ -56,4 +58,12 @@
             </div>
     </section>
 </div>
+
+@push('scripts')
+<script>
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
+@endpush
 @endsection
