@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\kontenVidio;
+use App\Models\KontenVideo;
 use Illuminate\Http\Request;
 use App\Models\Kelas;
 
@@ -10,7 +10,7 @@ class KontenVidioController extends Controller
     public function index()
     {
         
-        $kontenVidio = KontenVidio::all();
+        $kontenVidio = KontenVideo::all();
         return view('admin.kontenVidio.index', compact('kontenVidio'));
     }
 
@@ -29,7 +29,7 @@ class KontenVidioController extends Controller
             'bab' => 'required',
             'id_kelas' => 'required',
         ]);
-        KontenVidio::create([
+        KontenVideo::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'link' => $request->link,
@@ -42,7 +42,7 @@ class KontenVidioController extends Controller
 
     public function show($id)
     {
-        $kontenVidios = KontenVidio::where('id', $id)->first();
+        $kontenVidios = KontenVideo::where('id', $id)->first();
         return view('admin.kontenVidio.show', compact('kontenVidio'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -50,14 +50,14 @@ class KontenVidioController extends Controller
 
     public function edit($id)
     {
-        $kontenVidio = KontenVidio::find($id);
+        $kontenVidio = KontenVideo::find($id);
         $kelas = Kelas::all();
         return view('admin.kontenVidio.editvidio', compact('kontenVidio','kelas'));
     }
 
     public function update(Request $request, $id)
     {
-        $kontenVidio = KontenVidio::findOrFail($id);
+        $KontenVidio = KontenVideo::findOrFail($id);
         $kontenVidio->judul = $request->judul;
         $kontenVidio->deskripsi = $request->deskripsi;
         $kontenVidio->link = $request->link;
@@ -71,7 +71,7 @@ class KontenVidioController extends Controller
 
     public function destroy($id)
     {
-        KontenVidio::where('id', $id)->delete();
+        KontenVideo::where('id', $id)->delete();
 
         return redirect()->route('kontenVidio.index')
             ->with('delete', 'kontenVidio Berhasil Dihapus');
